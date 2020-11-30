@@ -4,6 +4,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/ChessOnServer/pom.xml" />
+        <option value="$PROJECT_DIR$/ChessOnREST/pom.xml" />
       </list>
     </option>
   </component>

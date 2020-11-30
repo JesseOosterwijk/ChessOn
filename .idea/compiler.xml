@@ -6,10 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ChessOnREST" />
         <module name="ChessOnServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ChessOnREST" target="1.5" />
       <module name="ChessOnServer" target="1.5" />
     </bytecodeTargetLevel>
   </component>
