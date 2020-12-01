@@ -1,6 +1,6 @@
 package chesson.server.controllers;
 
-import chesson.server.logic.ServerLogic;
+import chesson.server.logic.PieceLogic;
 import chesson.server.messages.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -8,22 +8,26 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class MessageController {
+public class PieceController {
+
     private final SimpMessagingTemplate simpMessagingTemplate;
-    private final ServerLogic serverLogic;
+    private final PieceLogic pieceLogic;
 
     @Autowired
-    public MessageController(SimpMessagingTemplate simpMessagingTemplate, ServerLogic serverLogic) {
+    public PieceController(SimpMessagingTemplate simpMessagingTemplate, PieceLogic pieceLogic) {
         this.simpMessagingTemplate = simpMessagingTemplate;
-        this.serverLogic = serverLogic;
+        this.pieceLogic = pieceLogic;
     }
 
-    @MessageMapping("/joinLobby")
-    public void JoinLobby(Message messageIn) {
+    @MessageMapping("/movePiece")
+    public void MovePiece(Message messageIn) {
     }
 
-    @MessageMapping("/createLobby")
-    public void CreateLobby(Message messageIn) {
+    @MessageMapping("/takePiece")
+    public void TakePiece(Message messageIn) {
+    }
 
+    @MessageMapping("/promotePawn")
+    public void PromotePawn(Message messageIn) {
     }
 }
