@@ -6,4 +6,5 @@ import java.util.List;
 public class Lobby {
     private List<Player> playerList;
     private List<Session> sessionList;
+    private PlayingField playingField;
 }
