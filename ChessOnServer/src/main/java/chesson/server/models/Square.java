@@ -2,10 +2,18 @@ package chesson.server.models;
 
 public class Square {
     private int rank;
-    private char file;
+    private int file;
 
-    public Square(int rank, char file) {
+    public Square(int rank, int file) {
         this.rank = rank;
         this.file = file;
+    }
+
+    public int getRank() {
+        return rank;
+    }
+
+    public int getFile() {
+        return file;
     }
 }

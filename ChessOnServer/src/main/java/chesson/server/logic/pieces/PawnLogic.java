@@ -9,23 +9,58 @@ public class PawnLogic implements PieceLogic {
 
     }
 
-    @Override
     public boolean CanMovePiece(Piece piece, Square from, Square to) {
-        return false;
+        if(!TriesToMoveIllegally(from, to)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    @Override
     public boolean TryMovePiece(Piece piece, Square from, Square to) {
         return false;
     }
 
-    @Override
     public boolean IsAllowedToMoveThere(Piece piece, Square from, Square to) {
         return false;
     }
 
-    @Override
     public boolean IsInCheckAfterMove(Piece piece, Square from, Square to) {
         return true;
     }
+
+    public boolean TriesToMoveIllegally(Square from, Square to) {
+        if(TriesToMoveDiagonally(from, to) || TriesToMoveMoreThanOneSquareForwards(from, to) || TriesToMoveBackwards(from, to)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean TriesToMoveBackwards(Square from, Square to) {
+        if(from.getRank() > to.getRank()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean TriesToMoveMoreThanOneSquareForwards(Square from, Square to) {
+        if(to.getRank() - from.getRank() > 1) {
+            return true;
+        } else if(to.getRank() - from.getRank() == 1 && from.getRank() != 2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean TriesToMoveDiagonally(Square from, Square to) {
+        if(from.getFile() != to.getFile()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

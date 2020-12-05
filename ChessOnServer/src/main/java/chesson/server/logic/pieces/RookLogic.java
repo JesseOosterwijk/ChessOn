@@ -9,22 +9,18 @@ public class RookLogic implements PieceLogic {
 
     }
 
-    @Override
     public boolean CanMovePiece(Piece piece, Square from, Square to) {
         return false;
     }
 
-    @Override
     public boolean TryMovePiece(Piece piece, Square from, Square to) {
         return false;
     }
 
-    @Override
     public boolean IsAllowedToMoveThere(Piece piece, Square from, Square to) {
         return false;
     }
 
-    @Override
     public boolean IsInCheckAfterMove(Piece piece, Square from, Square to) {
         return true;
     }
