@@ -13,7 +13,7 @@ public class KnightLogic implements PieceLogic {
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        return MovesNormally(from, to) && !IsInCheckAfterMove(from, to);
+        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to);
     }
 
     //TODO
@@ -21,7 +21,7 @@ public class KnightLogic implements PieceLogic {
         return true;
     }
 
-    private boolean MovesNormally(Square from, Square to) {
+    private boolean MovesCorrectly(Square from, Square to) {
         if(CorrectHorizontalJump(from, to) || CorrectVerticalJump(from, to)) {
             return true;
         } else {

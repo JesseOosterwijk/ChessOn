@@ -13,7 +13,7 @@ public class PawnLogic implements PieceLogic {
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        return !TriesToMoveIllegally(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to);
+        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to);
     }
 
     //TODO
@@ -21,7 +21,7 @@ public class PawnLogic implements PieceLogic {
         return true;
     }
 
-    private boolean TriesToMoveIllegally(Square from, Square to) {
+    private boolean MovesCorrectly(Square from, Square to) {
         return TriesToMoveDiagonally(from, to) || TriesToMoveMoreThanOneSquareForwards(from, to) || TriesToMoveBackwards(from, to);
     }
 
