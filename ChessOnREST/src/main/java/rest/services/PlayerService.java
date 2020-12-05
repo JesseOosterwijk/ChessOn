@@ -9,7 +9,7 @@ import rest.repositories.IPlayerRepository;
 public class PlayerService {
 
     @Autowired
-    public IPlayerRepository playerRepository;
+    private IPlayerRepository playerRepository;
 
     public void savePlayer(Player player) {
         playerRepository.save(player);

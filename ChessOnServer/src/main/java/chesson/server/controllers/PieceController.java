@@ -1,6 +1,6 @@
 package chesson.server.controllers;
 
-import chesson.server.logic.PieceLogic;
+import chesson.server.logic.pieces.PieceLogic;
 import chesson.server.messages.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 public class PieceController {
 
     private final SimpMessagingTemplate simpMessagingTemplate;
-    private final PieceLogic pieceLogic;
+    private PieceLogic pieceLogic;
 
     @Autowired
     public PieceController(SimpMessagingTemplate simpMessagingTemplate, PieceLogic pieceLogic) {
