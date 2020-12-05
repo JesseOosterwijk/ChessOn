@@ -13,11 +13,7 @@ public class PawnLogic implements PieceLogic {
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        if(!TriesToMoveIllegally(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to)) {
-            return true;
-        } else {
-            return false;
-        }
+        return !TriesToMoveIllegally(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to);
     }
 
     //TODO
@@ -26,11 +22,7 @@ public class PawnLogic implements PieceLogic {
     }
 
     private boolean TriesToMoveIllegally(Square from, Square to) {
-        if(TriesToMoveDiagonally(from, to) || TriesToMoveMoreThanOneSquareForwards(from, to) || TriesToMoveBackwards(from, to)) {
-            return true;
-        } else {
-            return false;
-        }
+        return TriesToMoveDiagonally(from, to) || TriesToMoveMoreThanOneSquareForwards(from, to) || TriesToMoveBackwards(from, to);
     }
 
     private boolean TriesToMoveBackwards(Square from, Square to) {
@@ -44,19 +36,13 @@ public class PawnLogic implements PieceLogic {
     private boolean TriesToMoveMoreThanOneSquareForwards(Square from, Square to) {
         if(to.getRank() - from.getRank() > 1) {
             return true;
-        } else if(to.getRank() - from.getRank() == 1 && from.getRank() != 2) {
-            return true;
         } else {
-            return false;
+            return to.getRank() - from.getRank() == 1 && from.getRank() != 2;
         }
     }
 
     private boolean TriesToMoveDiagonally(Square from, Square to) {
-        if(from.getFile() != to.getFile()) {
-            return true;
-        } else {
-            return false;
-        }
+        return from.getFile() != to.getFile();
     }
 
     //TODO
