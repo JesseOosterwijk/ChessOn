@@ -9,19 +9,30 @@ public class RookLogic implements PieceLogic {
         return to;
     }
 
-    public boolean CanMovePiece(Square from, Square to) {
+    private boolean CanMovePiece(Square from, Square to) {
         return false;
     }
 
-    public boolean TryMovePiece(Square from, Square to) {
-        return false;
-    }
-
-    public boolean IsAllowedToMoveThere(Square from, Square to) {
-        return false;
-    }
-
-    public boolean IsInCheckAfterMove(Square from, Square to) {
+    //TODO
+    private boolean IsInCheckAfterMove(Square from, Square to) {
         return true;
+    }
+
+    private boolean MovesNormally(Square from, Square to) {
+
+        return true;
+    }
+
+    private boolean MovesCorrectlyVertical() {
+        return true;
+    }
+
+    private boolean MovesCorrectlyHorizontal(Square from, Square to) {
+        return true;
+    }
+
+    //TODO
+    private boolean MovesOverOtherPieces(Square from, Square to) {
+        return false;
     }
 }

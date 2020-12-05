@@ -6,22 +6,36 @@ public class BishopLogic implements PieceLogic {
 
     @Override
     public Square MovePiece(Square from, Square to) {
-        return to;
+        if(CanMovePiece(from, to)) {
+            return to;
+        } else {
+            return from;
+        }
     }
 
-    public boolean CanMovePiece(Square from, Square to) {
-        return false;
+    private boolean CanMovePiece(Square from, Square to) {
+        if(MovesNormally(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
-    public boolean TryMovePiece(Square from, Square to) {
-        return false;
-    }
-
-    public boolean IsAllowedToMoveThere(Square from, Square to) {
-        return false;
-    }
-
-    public boolean IsInCheckAfterMove(Square from, Square to) {
+    //TODO
+    private boolean IsInCheckAfterMove(Square from, Square to) {
         return true;
+    }
+
+    private boolean MovesNormally(Square from, Square to) {
+        if(Math.abs(from.getRank() - to.getRank()) == Math.abs(from.getFile() - to.getFile())) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //TODO
+    private boolean MovesOverOtherPieces(Square from, Square to) {
+        return false;
     }
 }

@@ -12,19 +12,20 @@ public class KnightLogic implements PieceLogic {
         }
     }
 
-    public boolean CanMovePiece(Square from, Square to) {
-        if(MovesNormally(from, to) && !IsInCheckAfterMove()) {
+    private boolean CanMovePiece(Square from, Square to) {
+        if(MovesNormally(from, to) && !IsInCheckAfterMove(from, to)) {
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean IsInCheckAfterMove() {
+    //TODO
+    private boolean IsInCheckAfterMove(Square from, Square to) {
         return true;
     }
 
-    public boolean MovesNormally(Square from, Square to) {
+    private boolean MovesNormally(Square from, Square to) {
         if(CorrectHorizontalJump(from, to) || CorrectVerticalJump(from, to)) {
             return true;
         } else {
@@ -32,7 +33,7 @@ public class KnightLogic implements PieceLogic {
         }
     }
 
-    public boolean CorrectHorizontalJump(Square from, Square to) {
+    private boolean CorrectHorizontalJump(Square from, Square to) {
         if(from.getRank() - to.getRank() == 1 || to.getRank() - from.getRank() == 1) {
             if(from.getFile() - to.getFile() == 2 || to.getFile() - from.getFile() == 2) {
                 return true;
@@ -44,7 +45,7 @@ public class KnightLogic implements PieceLogic {
         }
     }
 
-    public boolean CorrectVerticalJump(Square from, Square to) {
+    private boolean CorrectVerticalJump(Square from, Square to) {
         if(from.getFile() - to.getFile() == 1 || to.getFile() - from.getFile() == 1) {
             if(from.getRank() - to.getRank() == 2 || to.getRank() - from.getRank() == 2) {
                 return true;

@@ -8,23 +8,24 @@ public class QueenLogic implements PieceLogic {
         return to;
     }
 
-    public boolean CanMovePiece(Square from, Square to) {
+    private boolean CanMovePiece(Square from, Square to) {
         return false;
     }
 
-    public boolean TryMovePiece(Square from, Square to) {
+    private boolean TryMovePiece(Square from, Square to) {
         return false;
     }
 
-    public boolean IsAllowedToMoveThere(Square from, Square to) {
+    private boolean IsAllowedToMoveThere(Square from, Square to) {
         return false;
     }
 
-    public boolean IsInCheckAfterMove(Square from, Square to) {
+    //TODO
+    private boolean IsInCheckAfterMove(Square from, Square to) {
         return true;
     }
 
-    public boolean TriesToMoveIllegally(Square from, Square to) {
+    private boolean TriesToMoveIllegally(Square from, Square to) {
         return true;
     }
 }
