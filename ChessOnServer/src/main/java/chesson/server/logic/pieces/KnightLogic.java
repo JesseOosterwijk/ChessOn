@@ -13,7 +13,7 @@ public class KnightLogic implements PieceLogic {
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to);
+        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOutOfBounds(to);
     }
 
     //TODO
@@ -43,5 +43,9 @@ public class KnightLogic implements PieceLogic {
         } else {
             return false;
         }
+    }
+
+    private boolean MovesOutOfBounds(Square to) {
+        return to.getFile() > 8 || to.getRank() > 8;
     }
 }

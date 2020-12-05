@@ -14,7 +14,7 @@ public class BishopLogic implements PieceLogic {
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to);
+        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to) && !MovesOutOfBounds(to);
     }
 
     //TODO
@@ -24,6 +24,10 @@ public class BishopLogic implements PieceLogic {
 
     private boolean MovesCorrectly(Square from, Square to) {
         return Math.abs(from.getRank() - to.getRank()) == Math.abs(from.getFile() - to.getFile());
+    }
+
+    private boolean MovesOutOfBounds(Square to) {
+        return to.getFile() > 8 || to.getRank() > 8;
     }
 
     //TODO

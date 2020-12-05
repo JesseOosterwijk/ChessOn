@@ -13,7 +13,7 @@ public class KingLogic implements PieceLogic {
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to);
+        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOutOfBounds(to);
     }
 
     //TODO
@@ -27,5 +27,9 @@ public class KingLogic implements PieceLogic {
 
     private boolean MovesMoreThanOneSquare(Square from, Square to) {
         return Math.abs(from.getRank() - to.getRank()) > 1 || Math.abs(from.getFile() - to.getFile()) > 1;
+    }
+
+    private boolean MovesOutOfBounds(Square to) {
+        return to.getFile() > 8 || to.getRank() > 8;
     }
 }

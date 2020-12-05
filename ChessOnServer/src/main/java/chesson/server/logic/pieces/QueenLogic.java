@@ -5,11 +5,15 @@ import chesson.server.models.Square;
 public class QueenLogic implements PieceLogic {
     @Override
     public Square MovePiece(Square from, Square to) {
-        return to;
+        if(CanMovePiece(from, to)) {
+            return to;
+        } else {
+            return from;
+        }
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to);
+        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to) && !MovesOutOfBounds(to);
     }
 
     //TODO
@@ -46,5 +50,9 @@ public class QueenLogic implements PieceLogic {
     //TODO
     private boolean MovesOverOtherPieces(Square from, Square to) {
         return false;
+    }
+
+    private boolean MovesOutOfBounds(Square to) {
+        return to.getFile() > 8 || to.getRank() > 8;
     }
 }

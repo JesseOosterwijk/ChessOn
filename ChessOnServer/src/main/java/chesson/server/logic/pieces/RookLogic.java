@@ -1,28 +1,29 @@
 package chesson.server.logic.pieces;
 
-import chesson.server.models.Piece;
 import chesson.server.models.Square;
 
 public class RookLogic implements PieceLogic {
     @Override
     public Square MovePiece(Square from, Square to) {
-        return to;
+        if(CanMovePiece(from, to)) {
+            return to;
+        } else {
+            return from;
+        }
     }
 
     private boolean CanMovePiece(Square from, Square to) {
-        return MovesNormally(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to);
+        return MovesNormally(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to) && !MovesOutOfBounds(to);
     }
 
     //TODO
     private boolean IsInCheckAfterMove(Square from, Square to) {
-        return true;
+        return false;
     }
 
     private boolean MovesNormally(Square from, Square to) {
-        if(from.getRank() == to.getRank()) {
-            return MovesCorrectlyVertically(from, to);
-        } else if (from.getFile() == to.getFile()) {
-            return MovesCorrectlyHorizontally(from, to);
+        if(MovesCorrectlyHorizontally(from, to) || MovesCorrectlyVertically(from, to)) {
+            return true;
         } else {
             return false;
         }
@@ -39,5 +40,9 @@ public class RookLogic implements PieceLogic {
     //TODO
     private boolean MovesOverOtherPieces(Square from, Square to) {
         return false;
+    }
+
+    private boolean MovesOutOfBounds(Square to) {
+        return to.getFile() > 8 || to.getRank() > 8;
     }
 }
