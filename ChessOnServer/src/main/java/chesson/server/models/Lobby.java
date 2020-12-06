@@ -1,18 +1,23 @@
 package chesson.server.models;
 
 import javax.websocket.Session;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Lobby {
-    private List<Player> playerList;
-    private List<Session> sessionList;
+    private ArrayList<Player> playerList;
+    private ArrayList<Session> sessionList;
     private PlayingField playingField;
+    private int id;
 
-    public List<Player> getPlayerList() {
+    public Lobby(int lobbyId, String username) {
+    }
+
+    public ArrayList<Player> getPlayerList() {
         return playerList;
     }
 
-    public void setPlayerList(List<Player> playerList) {
+    public void setPlayerList(ArrayList<Player> playerList) {
         this.playerList = playerList;
     }
 
@@ -20,7 +25,7 @@ public class Lobby {
         return sessionList;
     }
 
-    public void setSessionList(List<Session> sessionList) {
+    public void setSessionList(ArrayList<Session> sessionList) {
         this.sessionList = sessionList;
     }
 
@@ -30,5 +35,17 @@ public class Lobby {
 
     public void setPlayingField(PlayingField playingField) {
         this.playingField = playingField;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return playerList;
+    }
+
+    public void addPlayer(Player player) {
+        playerList.add(player);
     }
 }

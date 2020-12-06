@@ -1,3 +1,11 @@
 
-U
-java:S2094"BRemove this empty class, write its code or make it an "interface".( »ß
+˜
+java:S1319"vThe type of the "sessionList" object should be an interface such as "List" rather than the implementation "ArrayList".(Æéàøùÿÿÿÿ8±ô¶¼ã.
+z
+java:S4144,"]Update this method so that its implementation is not identical to "getPlayerList" on line 16.(ğÂ›8÷ø²¼ã.
+Œ
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(èÑı8İÇ´¼ã.
+
+java:S1319,"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğÂ›8†¾°¼ã.
+’
+java:S1319"uThe type of the "playerList" object should be an interface such as "List" rather than the implementation "ArrayList".(İâ«²8­´¼ã.

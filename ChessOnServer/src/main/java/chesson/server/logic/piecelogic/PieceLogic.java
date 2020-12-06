@@ -1,4 +1,4 @@
-package chesson.server.logic.pieces;
+package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 import org.springframework.stereotype.Component;

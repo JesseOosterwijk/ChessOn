@@ -1,4 +1,4 @@
-package chesson.server.logic.pieces;
+package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 
@@ -18,7 +18,7 @@ public class KnightLogic implements PieceLogic {
 
     //TODO
     private boolean IsInCheckAfterMove(Square from, Square to) {
-        return true;
+        return false;
     }
 
     private boolean MovesCorrectly(Square from, Square to) {

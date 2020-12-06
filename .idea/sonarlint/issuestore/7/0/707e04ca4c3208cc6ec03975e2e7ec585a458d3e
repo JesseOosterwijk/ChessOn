@@ -1,17 +1,22 @@
 
-w
-java:S1104"WMake messageType a static final constant or non-public and provide accessors if needed.(âõ´«ıÿÿÿÿ8´Î²Æá.
 o
-java:S1104"TMake username a static final constant or non-public and provide accessors if needed.(Ü±›Ô8´Î²Æá.
-k
-java:S1104"PMake host a static final constant or non-public and provide accessors if needed.(Ö«êú8´Î²Æá.
-n
-java:S1104"SMake players a static final constant or non-public and provide accessors if needed.(ÕÙµÔ8´Î²Æá.
-s
-java:S1104"SMake lobbyId a static final constant or non-public and provide accessors if needed.(Á²±§ÿÿÿÿÿ8´Î²Æá.
-n
-java:S1104"NMake to a static final constant or non-public and provide accessors if needed.(†ª†øøÿÿÿÿ8´Î²Æá.
-
-java:S1319"rThe type of the "players" object should be an interface such as "List" rather than the implementation "ArrayList".(ÕÙµÔ8´Î²Æá.
-¡
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İÿËıÿÿÿÿ8—É³Æá.
+java:S1104"RMake pieces a static final constant or non-public and provide accessors if needed.(—Œ÷ú8¡ƒ’¼ã.
+m
+java:S1104"PMake host a static final constant or non-public and provide accessors if needed.(ù†ğÀ8´Î²Æá.
+q
+java:S1104"TMake username a static final constant or non-public and provide accessors if needed.(Ü±›Ô8´Î²Æá.
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İÿËıÿÿÿÿ8—É³Æá.
+
+java:S1319"qThe type of the "pieces" object should be an interface such as "List" rather than the implementation "ArrayList".(—Œ÷ú8¡ƒ’¼ã.
+p
+java:S1104
+"NMake to a static final constant or non-public and provide accessors if needed.(†ª†øøÿÿÿÿ8´Î²Æá.
+y
+java:S1104"WMake messageType a static final constant or non-public and provide accessors if needed.(âõ´«ıÿÿÿÿ8´Î²Æá.
+u
+java:S1104"SMake players a static final constant or non-public and provide accessors if needed.(§éùÿÿÿÿ8´Î²Æá.
+u
+java:S1104"SMake lobbyId a static final constant or non-public and provide accessors if needed.(Á²±§ÿÿÿÿÿ8´Î²Æá.
+”
+java:S1319"rThe type of the "players" object should be an interface such as "List" rather than the implementation "ArrayList".(§éùÿÿÿÿ8´Î²Æá.

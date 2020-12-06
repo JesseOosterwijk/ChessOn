@@ -1,4 +1,4 @@
-package chesson.server.logic.pieces;
+package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 
@@ -18,7 +18,7 @@ public class QueenLogic implements PieceLogic {
 
     //TODO
     private boolean IsInCheckAfterMove(Square from, Square to) {
-        return true;
+        return false;
     }
 
     private boolean MovesCorrectly(Square from, Square to) {
@@ -30,13 +30,7 @@ public class QueenLogic implements PieceLogic {
     }
 
     private boolean MovesCorrectlyOrthogonallyAdjacent(Square from, Square to) {
-        if(from.getRank() == to.getRank()) {
-            return MovesCorrectlyVertically(from, to);
-        } else if (from.getFile() == to.getFile()) {
-            return MovesCorrectlyHorizontally(from, to);
-        } else {
-            return false;
-        }
+        return MovesCorrectlyHorizontally(from, to) || MovesCorrectlyVertically(from, to);
     }
 
     private boolean MovesCorrectlyVertically(Square from, Square to) {

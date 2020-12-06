@@ -1,7 +1,7 @@
 package PieceTests;
 
-import chesson.server.logic.pieces.PieceLogic;
-import chesson.server.logic.pieces.RookLogic;
+import chesson.server.logic.piecelogic.PieceLogic;
+import chesson.server.logic.piecelogic.RookLogic;
 import chesson.server.models.Player;
 import chesson.server.models.Square;
 import chesson.server.models.pieces.Piece;

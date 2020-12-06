@@ -1,4 +1,4 @@
-package chesson.server.logic.pieces;
+package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 
@@ -18,26 +18,22 @@ public class PawnLogic implements PieceLogic {
 
     //TODO
     private boolean IsInCheckAfterMove(Square from, Square to) {
-        return true;
+        return false;
     }
 
     private boolean MovesCorrectly(Square from, Square to) {
-        return TriesToMoveDiagonally(from, to) || TriesToMoveMoreThanOneSquareForwards(from, to) || TriesToMoveBackwards(from, to);
+        return !TriesToMoveDiagonally(from, to) || TriesToMoveMoreThanOneSquareForwards(from, to) || !TriesToMoveBackwards(from, to);
     }
 
     private boolean TriesToMoveBackwards(Square from, Square to) {
-        if(from.getRank() > to.getRank()) {
-            return true;
-        } else {
-            return false;
-        }
+        return from.getRank() > to.getRank();
     }
 
     private boolean TriesToMoveMoreThanOneSquareForwards(Square from, Square to) {
-        if(to.getRank() - from.getRank() > 1) {
-            return true;
+        if(from.getRank() == 2 && to.getRank() - from.getRank() < 3) {
+            return false;
         } else {
-            return to.getRank() - from.getRank() == 1 && from.getRank() != 2;
+            return !(to.getRank() - from.getRank() == 1);
         }
     }
 

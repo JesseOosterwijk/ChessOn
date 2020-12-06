@@ -1,4 +1,4 @@
-package chesson.server.logic.pieces;
+package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 
@@ -18,11 +18,11 @@ public class KingLogic implements PieceLogic {
 
     //TODO
     private boolean IsInCheckAfterMove(Square from, Square to) {
-        return true;
+        return false;
     }
 
     private boolean MovesCorrectly(Square from, Square to) {
-        return MovesMoreThanOneSquare(from, to);
+        return !MovesMoreThanOneSquare(from, to);
     }
 
     private boolean MovesMoreThanOneSquare(Square from, Square to) {
