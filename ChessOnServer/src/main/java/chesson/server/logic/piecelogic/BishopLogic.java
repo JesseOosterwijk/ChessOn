@@ -2,6 +2,10 @@ package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 
+import java.util.ArrayList;
+
+import static chesson.server.logic.piecelogic.QueenLogic.getSquaresDiagonally;
+
 public class BishopLogic implements PieceLogic {
 
     @Override
@@ -13,13 +17,22 @@ public class BishopLogic implements PieceLogic {
         }
     }
 
-    private boolean CanMovePiece(Square from, Square to) {
-        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to) && !MovesOutOfBounds(to);
+    @Override
+    public boolean CanMovePiece(Square from, Square to) {
+        return MovesCorrectly(from, to) && !MovesOutOfBounds(to);
     }
 
-    //TODO
-    private boolean IsInCheckAfterMove(Square from, Square to) {
-        return false;
+    @Override
+    public ArrayList<Square> getSquaresInBetweenMove(Square from, Square to) {
+        ArrayList<Square> squares = new ArrayList<>();
+        for(Square square: getSquaresDiag(from, to)) {
+            squares.add(square);
+        }
+        return squares;
+    }
+
+    private ArrayList<Square> getSquaresDiag(Square from, Square to) {
+        return getSquaresDiagonally(from, to);
     }
 
     private boolean MovesCorrectly(Square from, Square to) {
@@ -30,8 +43,5 @@ public class BishopLogic implements PieceLogic {
         return to.getFile() > 8 || to.getRank() > 8;
     }
 
-    //TODO
-    private boolean MovesOverOtherPieces(Square from, Square to) {
-        return false;
-    }
+
 }

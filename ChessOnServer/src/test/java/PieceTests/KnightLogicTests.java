@@ -2,7 +2,9 @@ package PieceTests;
 
 import chesson.server.logic.piecelogic.KnightLogic;
 import chesson.server.logic.piecelogic.PieceLogic;
+import chesson.server.models.Lobby;
 import chesson.server.models.Player;
+import chesson.server.models.PlayingField;
 import chesson.server.models.Square;
 import chesson.server.models.pieces.Knight;
 import chesson.server.models.pieces.Piece;
@@ -17,14 +19,16 @@ public class KnightLogicTests {
     private Player player;
     private Square originalSquare;
     private Piece knight;
+    private PlayingField field;
 
     @BeforeEach
     private void SetUp() {
         pieceLogic = new KnightLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(5,5);
-        knight = new Knight(player, originalSquare);
+        knight = new Knight(originalSquare, player, "test");
         player.addPiece(knight);
+        field = new PlayingField();
     }
 
     @Test

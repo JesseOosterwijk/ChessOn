@@ -1,14 +1,0 @@
-
-j	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëÝôò8¨Â¢œã.
-H
-java:S1172"&Remove these unused method parameters.(«Žòžùÿÿÿÿ8¨Â¢œã.
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þ•Ãô8¨Â¢œã.
-O
-java:S1135"2Complete the task associated to this TODO comment.(…ïœ†8¨Â¢œã.
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¿Èðúÿÿÿÿ8¸Ü«œã.
-C
-java:S1172""&Remove these unused method parameters.(ëÝôò8¨Â¢œã.
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ìÛƒ8¨Â¢œã.
-O
-java:S1135!"2Complete the task associated to this TODO comment.(…ïœ†8¨Â¢œã.
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«Žòžùÿÿÿÿ8¨Â¢œã.

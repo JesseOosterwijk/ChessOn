@@ -2,7 +2,9 @@ package PieceTests;
 
 import chesson.server.logic.piecelogic.PawnLogic;
 import chesson.server.logic.piecelogic.PieceLogic;
+import chesson.server.models.Lobby;
 import chesson.server.models.Player;
+import chesson.server.models.PlayingField;
 import chesson.server.models.Square;
 import chesson.server.models.pieces.Pawn;
 import chesson.server.models.pieces.Piece;
@@ -17,14 +19,16 @@ public class PawnLogicTests {
     private Player player;
     private Square originalSquare;
     private Piece pawn;
+    private PlayingField field;
 
     @BeforeEach
     private void SetUp() {
         pieceLogic = new PawnLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(2,5);
-        pawn = new Pawn(player, originalSquare);
+        pawn = new Pawn(originalSquare, player, "test");
         player.addPiece(pawn);
+        field = new PlayingField();
     }
 
     @Test
@@ -45,7 +49,7 @@ public class PawnLogicTests {
     public void PawnMovingMoreThanOneSquareReturnsOriginalSquare() {
         Square origin = new Square(3,5);
         Square expected = new Square(5,5);
-        Square actual = pieceLogic.MovePiece(origin, expected);
+        Square actual = pieceLogic.MovePiece(originalSquare, expected);
         Assert.assertEquals(expected, actual);
     }
 

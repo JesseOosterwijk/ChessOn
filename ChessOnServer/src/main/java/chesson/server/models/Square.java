@@ -1,5 +1,8 @@
 package chesson.server.models;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class Square {
     private int rank;
     private int file;

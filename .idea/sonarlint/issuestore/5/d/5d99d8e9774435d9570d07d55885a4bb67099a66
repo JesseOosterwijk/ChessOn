@@ -1,0 +1,9 @@
+
+Y
+java:S3655"7Call "Optional#isPresent()" before accessing the value.(§—€­ıÿÿÿÿ8á÷ªìì.
+M
+java:S1128	"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¿Ë°ìì.
+[
+java:S1128"9Remove this unused import 'chesson.server.models.Player'.(ªĞ…¢ùÿÿÿÿ8¿Ë°ìì.
+a
+java:S1128"?Remove this unused import 'chesson.server.models.pieces.Piece'.(¼Öíñùÿÿÿÿ8¿Ë°ìì.

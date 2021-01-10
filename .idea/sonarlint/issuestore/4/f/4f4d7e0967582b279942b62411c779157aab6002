@@ -1,0 +1,20 @@
+
+c
+java:S1128"CRemove this unused import 'chesson.server.logic.PlayingFieldLogic'.(Ğ¿Úøÿÿÿÿ8òŞ‡¶í.
+‹
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¿»ÓÜ8òŞ‡¶í.
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òâš8ıß„è.
+Z
+java:S1854"?Remove this useless assignment to local variable "lobbyPlayer".(ŞÏ¿à8òŞ‡¶í.
+K
+java:S1481"0Remove this unused "lobbyPlayer" local variable.(ŞÏ¿à8òŞ‡¶í.
+A
+java:S1172"&Remove these unused method parameters.(òâš8ıß„è.
+Œ
+java:S1319"qThe type of the "pieces" object should be an interface such as "List" rather than the implementation "ArrayList".(Ä¥®ª8òŞ‡¶í.
+K
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8òŞ‡¶í.
+W
+java:S1128"<Remove this unused import 'chesson.server.logic.LobbyLogic'.(»¦·‚8òŞ‡¶í.
+M
+java:S1144"2Remove this unused private "checkForCheck" method.(Ö€úò8òŞ‡¶í.

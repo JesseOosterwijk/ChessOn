@@ -15,6 +15,7 @@ public class PieceMessage {
     public Square squareFrom;
     public Square squareTo;
     public Square currentSquare;
+    public Piece currentPiece;
 
     public PieceMessage() {
     }

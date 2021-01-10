@@ -1,0 +1,17 @@
+
+f	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŸÀüüÿÿÿÿ
+f	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜İú¥şÿÿÿÿ
+f	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¿Èğúÿÿÿÿ
+I
+java:S1940")Use the opposite operator ("!=") instead.(ˆüû¸üÿÿÿÿ8Ù¾¾¸í.
+V	java:S125"<This block of commented-out lines of code should be removed.(É´‘Å8éâã·í.
+Z
+java:S1128"?Remove this unused import 'chesson.server.models.PlayingField'.(’¡³8çí»·ä.
+Y
+java:S1128"9Remove this unused import 'chesson.server.models.Player'.(ªĞ…¢ùÿÿÿÿ8çí»·ä.
+F
+java:S1172"&Remove these unused method parameters.(ŸÀüüÿÿÿÿ8éâã·í.
+_
+java:S1128"?Remove this unused import 'chesson.server.models.pieces.Piece'.(¼Öíñùÿÿÿÿ8çí»·ä.
+a	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç¸Í×
+a	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş•Ãô

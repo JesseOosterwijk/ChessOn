@@ -2,6 +2,11 @@ package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 
+import java.util.ArrayList;
+
+import static chesson.server.logic.piecelogic.QueenLogic.getSquaresHorizontally;
+import static chesson.server.logic.piecelogic.QueenLogic.getSquaresVertically;
+
 public class RookLogic implements PieceLogic {
     @Override
     public Square MovePiece(Square from, Square to) {
@@ -12,35 +17,46 @@ public class RookLogic implements PieceLogic {
         }
     }
 
-    private boolean CanMovePiece(Square from, Square to) {
-        return MovesNormally(from, to) && !IsInCheckAfterMove(from, to) && !MovesOverOtherPieces(from, to) && !MovesOutOfBounds(to);
+    @Override
+    public boolean CanMovePiece(Square from, Square to) {
+        return MovesNormally(from, to) && !MovesOutOfBounds(to);
     }
 
-    //TODO
-    private boolean IsInCheckAfterMove(Square from, Square to) {
-        return false;
+    @Override
+    public ArrayList<Square> getSquaresInBetweenMove(Square from, Square to) {
+        ArrayList<Square> squares = new ArrayList<>();
+        if(MovesCorrectlyHorizontally(from, to)) {
+            for(Square square: getSquaresHor(from, to)) {
+                squares.add(square);
+            }
+        } else if(MovesCorrectlyVertically(from, to)) {
+            for(Square square: getSquaresVer(from, to)) {
+                squares.add(square);
+            }
+        }
+        return squares;
+    }
+
+    private ArrayList<Square> getSquaresVer(Square from, Square to) {
+        return getSquaresVertically(from, to);
+    }
+
+    private ArrayList<Square> getSquaresHor(Square from, Square to) {
+        return getSquaresHorizontally(from, to);
     }
 
     private boolean MovesNormally(Square from, Square to) {
-        if(MovesCorrectlyHorizontally(from, to) || MovesCorrectlyVertically(from, to)) {
-            return true;
-        } else {
-            return false;
-        }
+        return MovesCorrectlyHorizontally(from, to) || MovesCorrectlyVertically(from, to);
     }
 
     private boolean MovesCorrectlyVertically(Square from, Square to) {
-        return from.getFile() == to.getFile();
-    }
-
-    private boolean MovesCorrectlyHorizontally(Square from, Square to) {
         return from.getRank() == to.getRank();
     }
 
-    //TODO
-    private boolean MovesOverOtherPieces(Square from, Square to) {
-        return false;
+    private boolean MovesCorrectlyHorizontally(Square from, Square to) {
+        return from.getFile() == to.getFile();
     }
+
 
     private boolean MovesOutOfBounds(Square to) {
         return to.getFile() > 8 || to.getRank() > 8;

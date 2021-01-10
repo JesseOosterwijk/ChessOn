@@ -2,6 +2,8 @@ package chesson.server.logic.piecelogic;
 
 import chesson.server.models.Square;
 
+import java.util.ArrayList;
+
 public class KingLogic implements PieceLogic {
     @Override
     public Square MovePiece(Square from, Square to) {
@@ -12,13 +14,14 @@ public class KingLogic implements PieceLogic {
         }
     }
 
-    private boolean CanMovePiece(Square from, Square to) {
-        return MovesCorrectly(from, to) && !IsInCheckAfterMove(from, to) && !MovesOutOfBounds(to);
+    @Override
+    public boolean CanMovePiece(Square from, Square to) {
+        return MovesCorrectly(from, to) && !MovesOutOfBounds(to);
     }
 
-    //TODO
-    private boolean IsInCheckAfterMove(Square from, Square to) {
-        return false;
+    @Override
+    public ArrayList<Square> getSquaresInBetweenMove(Square from, Square to) {
+        return new ArrayList<>();
     }
 
     private boolean MovesCorrectly(Square from, Square to) {

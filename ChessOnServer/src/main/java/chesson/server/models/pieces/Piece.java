@@ -1,22 +1,35 @@
 package chesson.server.models.pieces;
 
+import chesson.server.logic.piecelogic.PieceLogic;
 import chesson.server.models.Player;
 import chesson.server.models.Square;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
+
+@AllArgsConstructor
 public abstract class Piece {
-    private Square square;
-    private Player player;
+    @Getter @Setter
+    Square square;
+    @Getter
+    Player player;
+    @Getter
+    int value = 0;
+    @Getter
+    String url = null;
+    PieceLogic pieceLogic;
 
-    public Piece(Player player, Square square) {
-        this.player = player;
-        this.square = square;
+    public boolean tryMoveSquare(Square from, Square to) {
+        return pieceLogic.CanMovePiece(from, to);
     }
 
-    public Square getSquare() {
-        return square;
+    public void move(Square from, Square to) {
+        pieceLogic.MovePiece(from, to);
     }
 
-    public Player getPlayer() {
-        return player;
+    public ArrayList<Square> getSquaresInBetweenMove(Square from, Square to) {
+        return pieceLogic.getSquaresInBetweenMove(from, to);
     }
 }

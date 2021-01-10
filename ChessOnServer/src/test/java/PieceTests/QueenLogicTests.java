@@ -3,6 +3,7 @@ package PieceTests;
 import chesson.server.logic.piecelogic.PieceLogic;
 import chesson.server.logic.piecelogic.QueenLogic;
 import chesson.server.models.Player;
+import chesson.server.models.PlayingField;
 import chesson.server.models.Square;
 import chesson.server.models.pieces.Piece;
 import chesson.server.models.pieces.Queen;
@@ -23,7 +24,7 @@ public class QueenLogicTests {
         pieceLogic = new QueenLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(5,5);
-        queen = new Queen(player, originalSquare);
+        queen = new Queen(originalSquare, player, "test");
         player.addPiece(queen);
     }
 
@@ -103,6 +104,102 @@ public class QueenLogicTests {
         Square actual = pieceLogic.MovePiece(originalSquare, expected);
         Assert.assertEquals(originalSquare, actual);
     }
+
+    @Test
+    public void QueenMovingDiagonallyTopRightReturnsArrayList() {
+        Square to = new Square(8,8);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getFile() - to.getFile()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getRank(), result.indexOf(s) + originalSquare.getRank() + 1);
+            Assert.assertEquals(s.getFile(), result.indexOf(s) + originalSquare.getFile() + 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+
+    @Test
+    public void QueenMovingDiagonallyTopLeftReturnsArrayList() {
+        Square to = new Square(8,2);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getFile() - to.getFile()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getRank(), result.indexOf(s) + originalSquare.getRank() + 1);
+            Assert.assertEquals(s.getFile(), originalSquare.getFile() - result.indexOf(s) - 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+
+    @Test
+    public void QueenMovingDiagonallyBottomRightReturnsArrayList() {
+        Square to = new Square(3,7);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getFile() - to.getFile()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getRank(), originalSquare.getRank() - result.indexOf(s) - 1);
+            Assert.assertEquals(s.getFile(), result.indexOf(s) + originalSquare.getFile() + 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+
+    @Test
+    public void QueenMovingDiagonallyBottomLeftReturnsArrayList() {
+        Square to = new Square(1,1);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getFile() - to.getFile()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getRank(), originalSquare.getRank() - result.indexOf(s) - 1);
+            Assert.assertEquals(s.getFile(), originalSquare.getFile() - result.indexOf(s) - 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+    @Test
+    public void QueenMovingVerticallyPositiveReturnsArraylist() {
+        Square to = new Square(5,8);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getFile() - to.getFile()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getFile(), originalSquare.getFile());
+            Assert.assertEquals(s.getRank(), result.indexOf(s) + originalSquare.getRank() + 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+
+    @Test
+    public void QueenMovingVerticallyNegativeReturnsArraylist() {
+        Square to = new Square(5,2);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getFile() - to.getFile()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getRank(), originalSquare.getRank());
+            Assert.assertEquals(s.getFile(),  originalSquare.getFile() - result.indexOf(s) - 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+
+    @Test
+    public void QueenMovingHorizontallyPositiveReturnsArraylist() {
+        Square to = new Square(8,5);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getRank() - to.getRank()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getFile(), originalSquare.getFile());
+            Assert.assertEquals(s.getRank(), result.indexOf(s) + originalSquare.getRank() + 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+
+    @Test
+    public void QueenRookMovingHorizontallyNegativeReturnsArraylist() {
+        Square to = new Square(2,5);
+        ArrayList<Square> result = pieceLogic.getSquaresInBetweenMove(originalSquare, to);
+        int amountOfSquares = Math.abs(originalSquare.getRank() - to.getRank()) - 1;
+        for(Square s: result) {
+            Assert.assertEquals(s.getFile(), originalSquare.getFile());
+            Assert.assertEquals(s.getRank(), originalSquare.getRank() - result.indexOf(s) - 1);
+        }
+        Assert.assertEquals(amountOfSquares, result.size());
+    }
+
 //TODO
 //    @Test
 //    public void QueenMovingDiscoversCheckReturnsOriginalSquare() {

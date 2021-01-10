@@ -3,10 +3,13 @@ package chesson.server.controllers;
 import chesson.server.enums.MessageType;
 import chesson.server.logic.ServerLogic;
 import chesson.server.messages.Message;
+import chesson.server.models.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
+
+import java.util.ArrayList;
 
 @Controller
 public class MessageController {
@@ -21,12 +24,12 @@ public class MessageController {
 
     @MessageMapping("/joinLobby")
     public void JoinLobby(Message messageIn) {
-        serverLogic.joinLobby(messageIn.lobbyId, messageIn.players.get(0));
+        serverLogic.joinLobby(messageIn.lobbyId, messageIn.username);
         Message messageOut = new Message();
         messageOut.messageType = MessageType.JOIN_LOBBY;
         messageOut.players = serverLogic.getPlayers(messageIn.lobbyId);
         messageOut.lobbyId = messageIn.lobbyId;
-        messageOut.host = messageOut.players.get(0);
+        SendMessageToPlayers(messageOut, messageOut.players);
     }
 
 
@@ -36,7 +39,14 @@ public class MessageController {
         messageOut.lobbyId = serverLogic.createLobbyAndReturnId(messageIn.username);
         messageOut.players = serverLogic.getPlayers(messageOut.lobbyId);
         messageOut.messageType = MessageType.CREATE_LOBBY;
-        messageOut.host = messageIn.players.get(0);
+        messageOut.host = messageOut.players.get(0);
         simpMessagingTemplate.convertAndSend(messageIn.to, messageOut);
+    }
+
+    private void SendMessageToPlayers(Message message, ArrayList<Player> players) {
+        for (Player p : players) {
+            String to = "/topic/" + p.getName();
+            simpMessagingTemplate.convertAndSend(to, message);
+        }
     }
 }
