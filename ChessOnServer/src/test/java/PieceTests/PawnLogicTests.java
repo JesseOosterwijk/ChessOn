@@ -25,7 +25,7 @@ public class PawnLogicTests {
     private void SetUp() {
         pieceLogic = new PawnLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
-        originalSquare = new Square(2,5);
+        originalSquare = new Square(2,1);
         pawn = new Pawn(originalSquare, player, "test");
         player.addPiece(pawn);
         field = new PlayingField();
@@ -33,38 +33,38 @@ public class PawnLogicTests {
 
     @Test
     public void PawnMovingOneSquareVerticallyReturnsNewSquare() {
-        Square expected = new Square(3,5);
+        Square expected = new Square(2,2);
         Square actual = pieceLogic.MovePiece(originalSquare, expected);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void PawnMovingTwoSquaresVerticallyFromSecondRankReturnsNewSquare() {
-        Square expected = new Square(4,5);
+        Square expected = new Square(2,3);
         Square actual = pieceLogic.MovePiece(originalSquare, expected);
         Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void PawnMovingMoreThanOneSquareReturnsOriginalSquare() {
-        Square origin = new Square(3,5);
-        Square expected = new Square(5,5);
-        Square actual = pieceLogic.MovePiece(originalSquare, expected);
-        Assert.assertEquals(expected, actual);
+        Square origin = new Square(2,4);
+        Square expected = new Square(2, 6);
+        Square actual = pieceLogic.MovePiece(origin, expected);
+        Assert.assertEquals(origin, actual);
     }
 
     @Test
-    public void PawnMovingToDifferentFileReturnsOriginalSquare() {
-        Square expected = new Square(2,6);
+    public void PawnMovingToDifferentRankReturnsOriginalSquare() {
+        Square expected = new Square(3,1);
         Square actual = pieceLogic.MovePiece(originalSquare, expected);
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(originalSquare, actual);
     }
 
     @Test
     public void PawnMovingIncorrectlyReturnsOriginalSquare() {
         Square expected = new Square(7,3);
         Square actual = pieceLogic.MovePiece(originalSquare, expected);
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(originalSquare, actual);
     }
 
     @Test
