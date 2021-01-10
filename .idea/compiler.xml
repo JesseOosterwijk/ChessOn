@@ -12,7 +12,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ChessOnREST" target="1.5" />
+      <module name="ChessOnREST" target="11" />
       <module name="ChessOnServer" target="11" />
     </bytecodeTargetLevel>
   </component>

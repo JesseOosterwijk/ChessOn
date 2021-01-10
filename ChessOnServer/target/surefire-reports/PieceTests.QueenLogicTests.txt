@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: PieceTests.QueenLogicTests
 -------------------------------------------------------------------------------
-Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in PieceTests.QueenLogicTests
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in PieceTests.QueenLogicTests
