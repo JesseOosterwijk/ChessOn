@@ -1,9 +1,0 @@
-PieceTests\RookLogicTests.class
-PieceTests\BishopLogicTests.class
-PieceTests\MockChessApplication.class
-PieceTests\KingLogicTests.class
-PieceTests\QueenLogicTests.class
-PieceTests\PawnLogicTests.class
-PieceTests\KnightLogicTests.class
-PieceTests\PieceLogicTests.class
-PlayerTests\MockLoginApplication.class
