@@ -29,8 +29,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     codeCoverageToolOption: JaCoCo
+    sonarQubeRunAnalysis: true
+    isJacocoCoverageReportXML: true
     goals: 'clean verify sonar:sonar'
-- task: SonarCloudAnalyze@1
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
