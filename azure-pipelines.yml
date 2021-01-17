@@ -16,6 +16,9 @@ steps:
     SonarCloud: 'sonarcloud'
     organization: '398785'
     scannerMode: 'Other'
+    extraProperties: |
+      sonar.projectKey=398785_ChessOnBackend
+      sonar.projectName=ChessOnBackend
 - task: Maven@3
   inputs:
     mavenPomFile: './ChessOnServer/pom.xml'
@@ -26,8 +29,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     codeCoverageToolOption: JaCoCo
+    sonarQubeRunAnalysis: true
+    isJacocoCoverageReportXML: true
     goals: 'clean verify sonar:sonar'
-- task: SonarCloudAnalyze@1
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
