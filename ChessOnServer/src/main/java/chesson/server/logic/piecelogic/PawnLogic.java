@@ -43,7 +43,7 @@ public class PawnLogic implements PieceLogic {
         if(from.getFile() == 1 || from.getFile() == 6) {
             return Math.abs(to.getFile() - from.getFile()) > 2;
         } else {
-            return !(to.getFile() - from.getFile() == 1);
+            return !(Math.abs(to.getFile() - from.getFile()) == 1);
         }
     }
 

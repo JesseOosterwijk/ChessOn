@@ -6,8 +6,8 @@ import chesson.server.models.Square;
 
 public class King extends Piece {
 
-    public King(Square square, Player player, String url) {
-        super(square, player, 0, url, new KingLogic());
+    public King(Square square, String url) {
+        super(square,0, url, new KingLogic());
     }
 
     @Override

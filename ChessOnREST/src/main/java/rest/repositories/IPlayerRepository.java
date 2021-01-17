@@ -6,4 +6,5 @@ import rest.models.Player;
 import java.util.UUID;
 
 public interface IPlayerRepository extends JpaRepository<Player, UUID> {
+    Player findPlayerByName(String name);
 }

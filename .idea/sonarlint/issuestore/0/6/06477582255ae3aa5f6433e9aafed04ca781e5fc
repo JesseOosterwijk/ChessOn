@@ -1,14 +1,16 @@
 
-h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò®¼Ã8ìŞ‡¶í.
-m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šø‚ùÿÿÿÿ8²ü™ì.
-Y
-java:S1144"9Remove this unused private "getPieceByCoordinate" method.(ğˆÏ¶ıÿÿÿÿ8ìŞ‡¶í.
-
-java:S1319"rThe type of the "players" object should be an interface such as "List" rather than the implementation "ArrayList".(äšß8ìŞ‡¶í.
-h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äšß8ìŞ‡¶í.
-y
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÁÑñÿÿÿÿÿ8Œ÷Ó¶í.
-^
-java:S1854">Remove this useless assignment to local variable "messageOut".(æ©Æåûÿÿÿÿ8±²¿·í.
-O
-java:S1481"/Remove this unused "messageOut" local variable.(æ©Æåûÿÿÿÿ8±²¿·í.
+a
+java:S1128"?Remove this unused import 'chesson.server.models.pieces.Piece'.(¼Öíñùÿÿÿÿ8¯ûÏíî.
+o	java:S100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Šø‚ùÿÿÿÿ8¦‰Èíî.
+j	java:S1009"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò®¼Ã8¦‰Èíî.
+`
+java:S1128">Remove this unused import 'chesson.server.models.pieces.Pawn'.(íëùšÿÿÿÿÿ8¯ûÏíî.
+o	java:S100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±¼£˜ÿÿÿÿÿ8¥ïùíî.
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¯ûÏíî.
+
+java:S13191"rThe type of the "players" object should be an interface such as "List" rather than the implementation "ArrayList".(äšß8¦‰Èíî.
+V
+java:S1128
+"9Remove this unused import 'chesson.server.models.Square'.(ëÚÙÀ8¯ûÏíî.
+j	java:S1001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äšß8¦‰Èíî.

@@ -14,8 +14,6 @@ public abstract class Piece {
     @Getter @Setter
     Square square;
     @Getter
-    Player player;
-    @Getter
     int value = 0;
     @Getter
     String url = null;

@@ -14,4 +14,10 @@ public class PlayerService {
     public void savePlayer(Player player) {
         playerRepository.save(player);
     }
+
+    public boolean login(Player player) {
+        if(playerRepository.findPlayerByName(player.getName()) != null) {
+            
+        }
+    }
 }

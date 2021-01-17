@@ -28,7 +28,7 @@ public class RookLogicTests {
         pieceLogic = new RookLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(5,5);
-        rook = new Rook(originalSquare, player, "test");
+        rook = new Rook(originalSquare, "test");
         player.addPiece(rook);
         field = new PlayingField();
     }

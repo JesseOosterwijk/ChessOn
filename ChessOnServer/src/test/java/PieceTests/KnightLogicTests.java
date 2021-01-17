@@ -26,7 +26,7 @@ public class KnightLogicTests {
         pieceLogic = new KnightLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(5,5);
-        knight = new Knight(originalSquare, player, "test");
+        knight = new Knight(originalSquare,"test");
         player.addPiece(knight);
         field = new PlayingField();
     }

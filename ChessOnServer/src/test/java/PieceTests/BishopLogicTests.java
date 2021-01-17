@@ -27,7 +27,7 @@ public class BishopLogicTests {
         field = new PlayingField();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(5,5);
-        bishop = new Bishop(originalSquare, player, "test");
+        bishop = new Bishop(originalSquare,"test");
         player.addPiece(bishop);
     }
 

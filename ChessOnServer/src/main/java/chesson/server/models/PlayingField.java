@@ -14,7 +14,6 @@ import java.util.List;
 public class PlayingField {
     private final ArrayList<Square> squares;
 
-    @Getter
     private ArrayList<Piece> pieces = new ArrayList<>();
 
     public PlayingField() {
@@ -22,7 +21,13 @@ public class PlayingField {
     }
 
 
-    public ArrayList<Piece> getPieces() {
+    public ArrayList<Piece> getPieces(ArrayList<Player> players) {
+        ArrayList<Piece> pieces = new ArrayList<>();
+        for (Player player: players) {
+            for (Piece piece: player.getPieces()) {
+                pieces.add(piece);
+            }
+        }
         return pieces;
     }
 
@@ -31,25 +36,37 @@ public class PlayingField {
     }
 
     public void attemptMove(Lobby lobby, Square from, Square to, String username, PlayingFieldController controller) {
+
         Player lobbyPlayer = lobby.getPlayer(username);
-        Piece piece = getPieceByCoordinate(from);
-        if(piece.tryMoveSquare(from, to)) {
-            piece.setSquare(to);
+        Piece piece = getPieceByCoordinate(from, lobbyPlayer);
+
+        if(lobby.getPlayers().indexOf(lobbyPlayer) == lobby.getTurn() && piece != null) {
+
+            if(piece.tryMoveSquare(from, to) && !checkIfPiecePlayerIsPresentAtSquare(lobbyPlayer, to)) {
+                piece.setSquare(to);
+                if(checkForCheck(lobbyPlayer, lobby)) {
+                    piece.setSquare(from);
+                    lobby.setTurn(1 - lobby.getTurn());
+                } else if (checkIfPiecePlayerIsPresentAtSquare(getOpponentPlayer(lobby, lobbyPlayer), to)) {
+                    removePiecePlayerAtSquare(getOpponentPlayer(lobby, lobbyPlayer), to);
+                }
+                lobby.setTurn(1 - lobby.getTurn());
+            }
         }
         controller.UpdatePieces(lobby.getPlayers(), this);
     }
 
-    private boolean checkForCheck() {
-        for(Piece piece: this.getPieces()) {
-            if(piece.tryMoveSquare(piece.getSquare(), getKingSquare())) {
+    private boolean checkForCheck(Player player, Lobby lobby) {
+        for(Piece piece: getOpponentPlayer(lobby, player).getPieces()) {
+            if(piece.tryMoveSquare(piece.getSquare(), getKingSquarePlayer(player))) {
                 return true;
             }
         }
         return false;
     }
 
-    private Square getKingSquare() {
-        for(Piece piece: this.getPieces()) {
+    private Square getKingSquarePlayer(Player player) {
+        for(Piece piece: player.getPieces()) {
             if(piece.getValue() == 0) {
                 return piece.getSquare();
             }
@@ -61,14 +78,36 @@ public class PlayingField {
         return false;
     }
 
-    private Piece getPieceByCoordinate(Square square) {
-        for(Piece piece: this.getPieces()) {
+    private Piece getPieceByCoordinate(Square square, Player player) {
+        for(Piece piece: player.getPieces()) {
             if(piece.getSquare().getFile() == square.getFile() && piece.getSquare().getRank() == square.getRank()) {
                 return piece;
             }
         }
-        return new Pawn(new Square(0,0), new Player("henk", 0, new ArrayList<>()), "pawn");
+        return null;
     }
 
+    private boolean checkIfPiecePlayerIsPresentAtSquare(Player player, Square square) {
+        for(Piece piece: player.getPieces()) {
+            if(piece.getSquare().getFile() == square.getFile() && piece.getSquare().getRank() == square.getRank()) {
+                return true;
+            }
+        }
+        return false;
+    }
 
+    private Player getOpponentPlayer(Lobby lobby, Player player) {
+        Player opponent;
+        if(lobby.getPlayers().indexOf(player) == 0) {
+            opponent = lobby.getPlayers().get(1);
+        } else {
+            opponent = lobby.getPlayers().get(0);
+        }
+        return opponent;
+    }
+
+    private void removePiecePlayerAtSquare(Player player, Square square) {
+        Piece piece = getPieceByCoordinate(square, player);
+        player.removePiece(piece);
+    }
 }

@@ -1,13 +1,12 @@
 package chesson.server.models.pieces;
 
 import chesson.server.logic.piecelogic.RookLogic;
-import chesson.server.models.Player;
 import chesson.server.models.Square;
 
 public class Rook extends Piece {
 
-    public Rook(Square square, Player player, String url) {
-        super(square, player, 5, url, new RookLogic());
+    public Rook(Square square, String url) {
+        super(square, 5, url, new RookLogic());
     }
 
     @Override

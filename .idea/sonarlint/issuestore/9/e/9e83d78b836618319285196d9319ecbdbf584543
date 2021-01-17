@@ -1,17 +1,25 @@
 
-m
-java:S1192a"KDefine a constant instead of duplicating this literal "pawn_white" 8 times.(áıéåøÿÿÿÿ8²¤ô¶í.
-Y
-java:S3655="7Call "Optional#isPresent()" before accessing the value.(ïİö¨ÿÿÿÿÿ8èŞ‡¶í.
 ˜
-java:S1319("vThe type of the "sessionList" object should be an interface such as "List" rather than the implementation "ArrayList".(Æéàøùÿÿÿÿ8ğó¥ìì.
-h
-java:S1192O"KDefine a constant instead of duplicating this literal "pawn_black" 8 times.(ö¾¼€8²¤ô¶í.
-z
-java:S41448"]Update this method so that its implementation is not identical to "getPlayerList" on line 28.(ğÂ›8ğó¥ìì.
-
-java:S13198"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğÂ›8ğó¥ìì.
-’
-java:S1319 "uThe type of the "playerList" object should be an interface such as "List" rather than the implementation "ArrayList".(İâ«²8ğó¥ìì.
+java:S1319-"vThe type of the "sessionList" object should be an interface such as "List" rather than the implementation "ArrayList".(Æéàøùÿÿÿÿ8ÿ¸„íî.
 Œ
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(èÑı8ğó¥ìì.
+java:S1319!"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(èÑı8ÿ¸„íî.
+h
+java:S1192w"KDefine a constant instead of duplicating this literal "pawn_black" 8 times.(¹±©8ò‚îî.
+
+java:S1319V"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(‡…Š8‰½Šíî.
+m
+java:S1192a"KDefine a constant instead of duplicating this literal "pawn_white" 8 times.(äşÏ‘üÿÿÿÿ8ò‚îî.
+J
+java:S1172V"-Remove this unused method parameter "player".(‡…Š8¬úœîî.
+Y
+java:S3655B"7Call "Optional#isPresent()" before accessing the value.(ïİö¨ÿÿÿÿÿ8ÿ¸„íî.
+
+java:S1319="pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğÂ›8ÿ¸„íî.
+z
+java:S4144="]Update this method so that its implementation is not identical to "getPlayerList" on line 33.(ğÂ›8ÿ¸„íî.
+’
+java:S1319l"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(¡»¶üÿÿÿÿ8ÀÉ’íî.
+O
+java:S1172l"-Remove this unused method parameter "player".(¡»¶üÿÿÿÿ8ÀÉ’íî.
+’
+java:S1319%"uThe type of the "playerList" object should be an interface such as "List" rather than the implementation "ArrayList".(İâ«²8ÿ¸„íî.

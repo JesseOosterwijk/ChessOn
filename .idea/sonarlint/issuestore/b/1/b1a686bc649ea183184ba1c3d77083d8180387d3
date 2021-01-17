@@ -1,7 +1,7 @@
 
-j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þ•Ãô8÷Ü„¼ã.
-c
-java:S1126"AReplace this if-then-else statement by a single return statement.(¢ý»îüÿÿÿÿ8÷Ü„¼ã.
-j	java:S100+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÜ¨£8÷Ü„¼ã.
-o	java:S1003"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¿Èðúÿÿÿÿ8÷Ü„¼ã.
-o	java:S100#"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷±Æëþÿÿÿÿ8÷Ü„¼ã.
+m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰¿Èðúÿÿÿÿ8÷Ü„¼ã.
+m	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷±Æëþÿÿÿÿ8÷Ü„¼ã.
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Þ•Ãô8÷Ü„¼ã.
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÜ¨£8÷Ü„¼ã.
+a
+java:S1126"AReplace this if-then-else statement by a single return statement.(¢ý»îüÿÿÿÿ8÷Ü„¼ã.

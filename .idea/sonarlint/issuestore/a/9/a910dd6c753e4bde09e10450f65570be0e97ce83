@@ -1,25 +1,25 @@
 
+S
+java:S5976#"6Replace these 4 tests with a single Parameterized one.(Şã„ƒ8–Éá·ä.
 ;
-java:S5786*"Remove this 'public' modifier.(‹Â¤Ÿ8ÙÜ„¼ã.
+java:S5786?"Remove this 'public' modifier.(ê¡¤Û8ÙÜ„¼ã.
 @
-java:S57861"Remove this 'public' modifier.(¹Ô’Şøÿÿÿÿ8ÙÜ„¼ã.
-;
-java:S5786e"Remove this 'public' modifier.(¡¨‘Œ8íÕ™«ç.
+java:S57868"Remove this 'public' modifier.(Û²¹øÿÿÿÿ8ÙÜ„¼ã.
 ;
 java:S5786#"Remove this 'public' modifier.(Şã„ƒ8ÙÜ„¼ã.
 ;
 java:S5786Y"Remove this 'public' modifier.(úî¨ˆ8Ë¹™«ç.
 ;
-java:S5786?"Remove this 'public' modifier.(ê¡¤Û8ÙÜ„¼ã.
+java:S5786*"Remove this 'public' modifier.(‹Â¤Ÿ8ÙÜ„¼ã.
+;
+java:S5786e"Remove this 'public' modifier.(¡¨‘Œ8íÕ™«ç.
+@
+java:S57861"Remove this 'public' modifier.(¹Ô’Şøÿÿÿÿ8ÙÜ„¼ã.
 ;
 java:S5786"Remove this 'public' modifier.(©¥ªš8ÙÜ„¼ã.
-@
-java:S57868"Remove this 'public' modifier.(Û²¹øÿÿÿÿ8ÙÜ„¼ã.
-S
-java:S5976#"6Replace these 4 tests with a single Parameterized one.(Şã„ƒ8–Éá·ä.
 ;
 java:S5786q"Remove this 'public' modifier.(Âàó±8æš«ç.
 @
-java:S5786F"Remove this 'public' modifier.(„ëõËşÿÿÿÿ8ÙÜ„¼ã.
-@
 java:S5786M"Remove this 'public' modifier.(äóÁØıÿÿÿÿ8¥ù—«ç.
+@
+java:S5786F"Remove this 'public' modifier.(„ëõËşÿÿÿÿ8ÙÜ„¼ã.

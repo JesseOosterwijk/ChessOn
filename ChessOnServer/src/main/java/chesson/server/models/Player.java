@@ -54,11 +54,7 @@ public class Player {
         this.pieces.add(piece);
     }
 
-//    public void removePiece(Piece piece) {
-//        for(Piece p: pieces) {
-//            if(p.getSquare().getRank() == piece.getSquare().getRank() && p.getSquare().getFile() == piece.getSquare().getFile()) {
-//                this.pieces.remove(piece);
-//            }
-//        }
-//    }
+    public void removePiece(Piece piece) {
+        pieces.remove(piece);
+    }
 }

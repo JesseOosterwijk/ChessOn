@@ -6,8 +6,8 @@ import chesson.server.models.Square;
 
 public class Pawn extends Piece {
 
-    public Pawn(Square square, Player player, String url) {
-        super(square, player, 1, url, new PawnLogic());
+    public Pawn(Square square, String url) {
+        super(square, 1, url, new PawnLogic());
     }
 
     @Override

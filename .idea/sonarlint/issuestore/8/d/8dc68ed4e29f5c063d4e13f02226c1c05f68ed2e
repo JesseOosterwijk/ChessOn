@@ -1,3 +1,5 @@
 
-Š
-java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ëáe8Ñ Ş©ç.
+Œ
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ëáe8ÊŠ•îî.
+[
+java:S1128"9Remove this unused import 'chesson.server.models.Player'.(ªĞ…¢ùÿÿÿÿ8”Ã–îî.

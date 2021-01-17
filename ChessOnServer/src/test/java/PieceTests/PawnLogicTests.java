@@ -26,7 +26,7 @@ public class PawnLogicTests {
         pieceLogic = new PawnLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(2,1);
-        pawn = new Pawn(originalSquare, player, "test");
+        pawn = new Pawn(originalSquare, "test");
         player.addPiece(pawn);
         field = new PlayingField();
     }

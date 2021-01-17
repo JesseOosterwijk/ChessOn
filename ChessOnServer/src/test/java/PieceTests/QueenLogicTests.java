@@ -24,7 +24,7 @@ public class QueenLogicTests {
         pieceLogic = new QueenLogic();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(5,5);
-        queen = new Queen(originalSquare, player, "test");
+        queen = new Queen(originalSquare,"test");
         player.addPiece(queen);
     }
 

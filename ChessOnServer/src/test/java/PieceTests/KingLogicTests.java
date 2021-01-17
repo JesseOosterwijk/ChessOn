@@ -27,7 +27,7 @@ public class KingLogicTests {
         field = new PlayingField();
         player = new Player("Jesse", 400, new ArrayList<>());
         originalSquare = new Square(5,5);
-        king = new King(originalSquare, player, "test");
+        king = new King(originalSquare, "test");
         player.addPiece(king);
     }
 
